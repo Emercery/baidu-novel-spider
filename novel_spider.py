@@ -256,8 +256,8 @@ if __name__ == '__main__':
     parser.add_argument('--sleep-seconds', type=int, default=15, help='触发后等待秒数')
     parser.add_argument('--delay-min', type=float, default=0.1, help='请求延迟最小值')
     parser.add_argument('--delay-max', type=float, default=0.3, help='请求延迟最大值')
-    parser.add_argument('--BOOK_ID', type=str, default='4357297202', help='请求延迟最大值')
-    parser.add_argument('--BOOK_NAME', type=str, default='仙子，一日得道了解一下', help='请求延迟最大值')
+    # parser.add_argument('--BOOK_ID', type=str, default='4357297202', help='请求延迟最大值')
+    # parser.add_argument('--BOOK_NAME', type=str, default='仙子，一日得道了解一下', help='请求延迟最大值')
     args = parser.parse_args()
 
     # 并发控制
@@ -266,8 +266,8 @@ if __name__ == '__main__':
     FAIL_LIMIT = args.fail_limit  # 连续失败触发等待的阈值
     SLEEP_SECONDS = args.sleep_seconds  # 触发后等待秒数
     REQUEST_DELAY = (args.delay_min, args.delay_max)  # 每个请求前随机延迟
-    BOOK_ID = args.BOOK_ID
-    BOOK_NAME = args.BOOK_NAME
+    # BOOK_ID = args.BOOK_ID
+    # BOOK_NAME = args.BOOK_NAME
 
     JSON_FILE = f"{BOOK_ID}.json"
     TXT_FILE = f"{BOOK_NAME}.txt"
