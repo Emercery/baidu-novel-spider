@@ -64,10 +64,16 @@ async def danzhang(session, book_id, cid):
             novel_url = result['data']['novel']['content']['dataset']['content_url']
         except (KeyError, TypeError) as e:
             print(f"章节 {cid} 数据结构异常: {e}")
+            if result['data']['novel']['content']['dataset']["public_status"] == 2:
+                return {
+                    'cid': cid,
+                    'title': '',
+                    'content': '因部分内容不符合国家相关法律法规要求，本章节内容暂时无法阅读；小编正在努力修复，请耐心等待。'
+                }
             if result['data']['novel']['content']['dataset']['status_code'] == 501:
                 time.sleep(1)
-            response = requests.post(url=url,headers=headers,data=post_data,timeout=15,verify=False)
-            novel_url = response.json()['data']['novel']['content']['dataset']['content_url']
+                response = requests.post(url=url,headers=headers,data=post_data,timeout=15,verify=False)
+                novel_url = response.json()['data']['novel']['content']['dataset']['content_url']
 
 
 
