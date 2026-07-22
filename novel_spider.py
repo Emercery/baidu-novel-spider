@@ -23,7 +23,6 @@ HEADERS = {
     "x-sid-type": "1",
     "user-agent": "okhttp/3.12.12 SP-engine/3.51.0 Dalvik/2.1.0 (Linux; U; Android 12; DCO-AL00 Build/501caac.1) baiduboxapp/15.26.0.10 (Baidu; P1 12)",
     "content-type": "application/x-www-form-urlencoded",
-    "content-length": "370",
     "accept-encoding": "gzip",
     "cookie": COOKIE
 }
